@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RestWebApi.Api.Controllers
 {
-	[Route("[controller]")]
+	[Route("api/[controller]")]
 	[ApiController]
 	public class FootballTeamsController : ControllerBase
 	{
@@ -23,7 +23,7 @@ namespace RestWebApi.Api.Controllers
 			Players = players;
 		}
 
-		[HttpGet("getall")]
+		[HttpGet]
 		public IActionResult GetAll()
 		{
 			var allTeams = FootballTeams.GetAll().ToList();
@@ -36,7 +36,8 @@ namespace RestWebApi.Api.Controllers
 			return Ok(allTeams);
 		}
 
-		[HttpGet("getbyid/{id:int}")]
+		[HttpGet]
+		[Route("{id:int}")]
 		public IActionResult GetById(int id)
 		{
 			if (id < 1)
@@ -56,16 +57,17 @@ namespace RestWebApi.Api.Controllers
 			return Ok(team);
 		}
 
-		[HttpPost("addteam")]
+		[HttpPost]
 		public IActionResult AddTeam(FootballTeam team)
 		{
 			if (!FootballTeams.Create(team))
 				return StatusCode(500);
 
-			return Created($"footballteams/getbyid/{team.Id}", team);
+			return Created($"api/footballteams/{team.Id}", team);
 		}
 
-		[HttpPut("editteam/{id:int}")]
+		[HttpPut]
+		[Route("{id:int}")]
 		public IActionResult EditTeam(int id, FootballTeam newTeam)
 		{
 			var oldTeam = FootballTeams.GetById(id);
@@ -73,12 +75,13 @@ namespace RestWebApi.Api.Controllers
 				return NotFound();
 
 			if (!FootballTeams.Update(oldTeam, newTeam))
-				return StatusCode(500);
+				return StatusCode(304);
 
-			return NoContent();
+			return Ok();
 		}
 
-		[HttpDelete("deleteteam/{id:int}")]
+		[HttpDelete]
+		[Route("{id:int}")]
 		public IActionResult DeleteTeam(int id)
 		{
 			var team = FootballTeams.GetById(id);
