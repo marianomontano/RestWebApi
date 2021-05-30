@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestWebApi.Abstractions\RestWebApi.Abstractions.csproj" />
+    <ProjectReference Include="..\RestWebApi.DataAccess\RestWebApi.DataAccess.csproj" />
+    <ProjectReference Include="..\RestWebApi.Entities\RestWebApi.Entities.csproj" />
+    <ProjectReference Include="..\RestWebApi.Services\RestWebApi.Services.csproj" />
+  </ItemGroup>
+
+</Project>

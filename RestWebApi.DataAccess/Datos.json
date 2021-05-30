@@ -1,0 +1,85 @@
+{
+  "Teams": [
+    {
+      "Id": 1,
+      "Name": "River Plate"
+    },
+    {
+      "Id": 2,
+      "Name": "River Plate"
+    }
+  ]
+
+  "Players": [
+    {
+      "Id": 1,
+      "FirstName": "Jonathan",
+      "LastName": "Maidana",
+      "ShirtNumber": 4,
+      "TeamId": 1
+    },
+    {
+      "Id": 2,
+      "FirstName": "Emiliano",
+      "LastName": "Perez",
+      "ShirtNumber": 24,
+      "TeamId": 1
+    },
+    {
+      "Id": 3,
+      "FirstName": "Leonardo",
+      "LastName": "Ponzio",
+      "ShirtNumber": 23,
+      "TeamId": 1
+    },
+    {
+      "Id": 4,
+      "FirstName": "Milton",
+      "LastName": "Casco",
+      "ShirtNumber": 20,
+      "TeamId": 1
+    },
+    {
+      "Id": 5,
+      "FirstName": "Luis",
+      "LastName": "Díaz",
+      "ShirtNumber": 32,
+      "TeamId": 1
+    },
+    {
+      "Id": 6,
+      "FirstName": "Carlos",
+      "LastName": "Tevez",
+      "ShirtNumber": 10,
+      "TeamId": 2
+    },
+    {
+      "Id": 7,
+      "FirstName": "Sebastián",
+      "LastName": "Villa",
+      "ShirtNumber": 22,
+      "TeamId": 2
+    },
+    {
+      "Id": 8,
+      "FirstName": "Cristian",
+      "LastName": "Pavón",
+      "ShirtNumber": 31,
+      "TeamId": 2
+    },
+    {
+      "Id": 9,
+      "FirstName": "Carlos",
+      "LastName": "Medina",
+      "ShirtNumber": 9,
+      "TeamId": 2
+    },
+    {
+      "Id": 10,
+      "FirstName": "Mauro",
+      "LastName": "Rojo",
+      "ShirtNumber": 6,
+      "TeamId": 2
+    }
+  ]
+}
