@@ -16,6 +16,7 @@ namespace RestWebApi.DataAccess
 		public virtual DbSet<T> Entity { get; set; }
 		public DbContext(ApiDbContext db)
 		{
+			db.Database.Migrate();
 			this.db = db;
 			this.Entity = db.Set<T>();
 		}

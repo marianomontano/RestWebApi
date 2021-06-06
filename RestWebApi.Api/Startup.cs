@@ -10,15 +10,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using RestWebApi.Api.Configuration;
+using RestWebApi.Services;
 using RestWebApi.Application;
 using RestWebApi.DataAccess;
 using RestWebApi.Repository;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestWebApi.Abstractions;
 
 namespace RestWebApi.Api
 {
@@ -68,7 +70,9 @@ namespace RestWebApi.Api
 
 			services.AddScoped(typeof(IDbContext<>), typeof(DbContext<>));
 			services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-			services.AddScoped(typeof(IApplication<>), typeof(Application<>));
+			services.AddScoped(typeof(IApplication<>), typeof(Application<>));			
+			services.AddScoped(typeof(JwtSecurityTokenHandler));
+			services.AddScoped<ITokenHandlerService, TokenHandlerService>();
 			services.AddControllers();
 		}
 

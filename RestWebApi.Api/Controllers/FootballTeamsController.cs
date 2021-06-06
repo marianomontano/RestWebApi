@@ -17,9 +17,9 @@ namespace RestWebApi.Api.Controllers
 		private IApplication<FootballTeam> FootballTeams;
 		private IApplication<Player> Players;
 
-		public FootballTeamsController(IApplication<FootballTeam> footbalTeams, IApplication<Player> players)
+		public FootballTeamsController(IApplication<FootballTeam> footballTeams, IApplication<Player> players)
 		{
-			FootballTeams = footbalTeams;
+			FootballTeams = footballTeams;
 			Players = players;
 		}
 
